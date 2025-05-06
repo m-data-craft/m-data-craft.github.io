@@ -1,109 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M. Data Craft | Tools for Smarter Living</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #111827;
-    }
-    header {
-      background: linear-gradient(to right, #6366f1, #8b5cf6);
-      padding: 2rem;
-      color: white;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-    .section {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      margin-bottom: 1.5rem;
-    }
-    .card h2 {
-      margin-top: 0;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #4f46e5;
-      color: white;
-      text-decoration: none;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-    .socials {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .socials a {
-      margin: 0 0.75rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: #4f46e5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Data Craft - Template Collection</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --dark-blue: #1a4971;
+            --medium-blue: #3d93dd;
+            --light-blue: #78c6ff;
+            --turquoise: #0fd4d4;
+            --purple: #8a7adf;
+            --white: #ffffff;
+            --light-gray: #f5f7fa;
+            --gray: #e1e5eb;
+            --dark-gray: #4a4a4a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--medium-blue);
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--dark-blue);
+        }
+        
+        /* Header */
+        .header {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+        }
+        
+        .logo-bar {
+            display: inline-block;
+            border-radius: 6px 6px 0 0;
+            margin: 0 3px;
+        }
+        
+        .bar-1 {
+            background-color: var(--turquoise);
+            height: 25px;
+            width: 15px;
+        }
+        
+        .bar-2 {
+            background-color: var(--light-blue);
+            height: 35px;
+            width: 15px;
+        }
+        
+        .bar-3 {
+            background-color: var(--medium-blue);
+            height: 45px;
+            width: 15px;
+        }
+        
+        .bar-4 {
+            background-color: var(--purple);
+            height: 55px;
+            width: 15px;
+        }
+        
+        .magnifier {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--white);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .magnifier::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            right: -7px;
+            width: 10px;
+            height: 2px;
+            background-color: var(--white);
+            transform: rotate(45deg);
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .card-icon {
+            margin-right: 1rem;
+            color: var(--medium-blue);
+            font-size: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+        }
+        
+        .card-subtitle {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--medium-blue);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 0.5rem;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--purple);
+        }
+        
+        .btn-secondary {
+            background-color: var(--dark-blue);
+        }
+        
+        .btn-small {
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Project card */
+        .project-card {
+            border-left: 4px solid var(--turquoise);
+            padding-left: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-title svg {
+            margin-right: 0.7rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+        
+        .social-links a:hover {
+            color: var(--light-blue);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>M. Data Craft</h1>
-    <p>Build better habits. Learn smarter. Master everyday data.</p>
-  </header>
-
-  <section class="section">
-    <div class="card">
-      <h2>🚀 Explore Free Templates</h2>
-      <p>Download habit trackers, study planners, finance dashboards and more — crafted for Excel & Google Sheets.</p>
-      <a class="button" href="https://github.com/m-data-craft/mdc-tracker-excel-templates">Browse on GitHub</a>
-    </div>
-
-    <div class="card">
-      <h2>📘 Latest Project</h2>
-      <div class="card">
-        <h2>✅ Habit Tracker Simple (15-Day Cycle)</h2>
-        <p>Visualize your consistency with built-in checkboxes, conditional highlights, and progress charts.</p>
-        <p>The easiest way to track habits using Google Sheets & Excel. Great for beginners.</p>
-        <div>
-          <a href="https://docs.google.com/spreadsheets/d/1H7DcBqpW0fKLqydCQattV-EUI8Wx8rKsuihfVQlAP9Y" target="_blank">
-            <img src="https://img.shields.io/badge/Open%20in-Google%20Sheets-34A853?logo=google-sheets&style=for-the-badge" alt="Open in Google Sheets">
-          </a>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <span class="logo-bar bar-1"></span>
+                <span class="logo-bar bar-2"></span>
+                <span class="logo-bar bar-3"></span>
+                <span class="logo-bar bar-4"></span>
+            </div>
+            <div class="magnifier"></div>
         </div>
-        <div>
-          <a class="button" href="https://github.com/m-data-craft/mdc-tracker-excel-templates/tree/main/habit-tracker-simple">View on GitHub</a>
+        <h1>M. Data Craft</h1>
+        <p class="subtitle">Build better habits. Learn smarter. Master everyday data.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Templates Section -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 14L21 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 16H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="card-title">Explore Free Templates</h2>
+            </div>
+            <p class="card-subtitle">Download habit trackers, study planners, finance dashboards and more — crafted for Excel & Google Sheets.</p>
+            <a href="https://github.com/m-data-craft/mdc-tracker-excel-templates" class="btn btn-primary">Browse on GitHub</a>
+        </section>
+
+        <!-- Latest Project Section -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h2 class="card-title">Latest Project</h2>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="#0fd4d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="#0fd4d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Habit Tracker Simple (15-Day Cycle)
+                </h3>
+                <p>Visualize your consistency with built-in checkboxes, conditional highlights, and progress charts.</p>
+                <p>The easiest way to track habits using Google Sheets & Excel. Great for beginners.</p>
+                <a href="https://docs.google.com/spreadsheets/d/1H7DcBqpW0fKLqydCQattV-EUI8Wx8rKsuihfVQlAP9Y" class="btn btn-small">OPEN IN GOOGLE SHEETS</a>
+                <a href="https://github.com/m-data-craft/mdc-tracker-excel-templates/tree/main/habit-tracker-simple" class="btn btn-secondary btn-small">View on GitHub</a>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="card-title">My Mission</h2>
+            </div>
+            <p class="card-subtitle">Helping people build better habits, learn smarter, and master everyday data — starting with Excel and Sheets, then scaling up with SQL, Python, Power BI and beyond.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Follow along:</p>
+        <div class="social-links">
+            <a href="https://instagram.com/mdatacraft">Instagram</a>
+            <a href="https://www.threads.net/@mdatacraft">Threads</a>
+            <a href="https://github.com/m-data-craft">GitHub</a>
         </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>🎯 My Mission</h2>
-      <p>Helping people build better habits, learn smarter, and master everyday data — starting with Excel and Sheets, then scaling up with SQL, Python, Power BI and beyond.</p>
-    </div>
-  </section>
-
-  <div class="socials">
-    <p>📲 Follow along:</p>
-    <a href="https://instagram.com/mdatacraft">Instagram</a>
-    <a href="https://www.threads.net/@mdatacraft">Threads</a>
-    <a href="https://github.com/m-data-craft">GitHub</a>
-  </div>
+    </footer>
 </body>
 </html>
